@@ -1,0 +1,141 @@
+/* mobile first approach */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: 1rem/1.85 sans-serif;
+}
+
+footer {
+	margin-top: 2rem;
+	background-color: #F9F9FB;
+	padding: 30px 15px;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #444;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+.sub-1 .svg a {
+	color: #4e4e4e;
+}
+
+.sub-1 .svg a {
+	display: block;
+	width: 80px;
+}
+
+.sub-6 {
+	margin-top: 1.5rem;
+	border-top: 1px solid #222;
+	padding: 22px 0;
+}
+
+.sub-6 .svg-2 a,
+.navigation a {
+	color: #4e4e4e;
+}
+
+.navigation a {
+	display: inline-block;
+	padding: 5px 0;
+	margin-right: 1rem;
+}
+
+.last a {
+	color: #222;
+}
+
+.sub-1 {
+	grid-area: sub-1;
+}
+
+.sub-2 {
+	grid-area: sub-2;
+}
+
+.sub-3 {
+	grid-area: sub-3;
+}
+
+.sub-4 {
+	grid-area: sub-4;
+}
+
+.sub-5 {
+	grid-area: sub-5;
+}
+
+.sub-6 {
+	grid-area: sub-6;
+}
+
+.sub-2,
+.sub-3,
+.sub-4,
+.sub-5 {
+	padding: 0 0.5rem;
+}
+
+.last {
+	grid-area: last;
+	margin-top: 1.5rem;
+}
+
+.sub-6 {
+	display: flex;
+	gap: 2rem;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+@media screen and (min-width: 586px) {
+	.container {
+		display: grid;
+		gap: 2.5rem;
+		grid-template-areas:
+			"sub-1 ."
+			"sub-2 sub-3"
+			"sub-4 sub-5"
+			"sub-6 sub-6"
+			"last last";
+		grid-template-columns: 1fr 1fr;
+
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.container {
+		display: grid;
+		grid-template-areas:
+			"sub-1 sub-2 sub-3 sub-4 sub-5"
+			"sub-6 sub-6 sub-6 sub-6 sub-6"
+			"last last last last .";
+		grid-template-columns:
+			minmax(250px, 2fr) repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
+}
