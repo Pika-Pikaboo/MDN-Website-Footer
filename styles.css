@@ -5,6 +5,15 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--dark-bg-color: #20232A;
+	--light-bg-color: #F9F9FB;
+	--light-hyper-color: #222;
+	---light-hyper-variant: #4e4e4e;
+	--dark-primary-color: #fff;
+	--dark-text-header-color: #999;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -13,7 +22,7 @@ body {
 
 footer {
 	margin-top: 2rem;
-	background-color: #F9F9FB;
+	background-color: var(--light-bg-color);
 	padding: 30px 15px;
 	overflow: hidden;
 }
@@ -32,7 +41,7 @@ ul {
 
 ul li a {
 	text-decoration: none;
-	color: #444;
+	color: var(--light-hyper-color);
 }
 
 h2 {
@@ -40,7 +49,7 @@ h2 {
 }
 
 .sub-1 .svg a {
-	color: #4e4e4e;
+	color: var(---light-hyper-variant);
 }
 
 .sub-1 .svg a {
@@ -50,13 +59,13 @@ h2 {
 
 .sub-6 {
 	margin-top: 1.5rem;
-	border-top: 1px solid #222;
+	border-top: 1px solid var(--light-hyper-color);
 	padding: 22px 0;
 }
 
 .sub-6 .svg-2 a,
 .navigation a {
-	color: #4e4e4e;
+	color: var(---light-hyper-variant);
 }
 
 .navigation a {
@@ -66,7 +75,7 @@ h2 {
 }
 
 .last a {
-	color: #222;
+	color: var(--light-hyper-color);
 }
 
 .sub-1 {
@@ -115,7 +124,7 @@ h2 {
 @media screen and (min-width: 586px) {
 	.container {
 		display: grid;
-		gap: 2.5rem;
+		gap: 2rem;
 		grid-template-areas:
 			"sub-1 ."
 			"sub-2 sub-3"
@@ -137,5 +146,38 @@ h2 {
 		grid-template-columns:
 			minmax(250px, 2fr) repeat(4, minmax(0, 1fr));
 		gap: 1rem;
+	}
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	footer {
+		background-color: var(--dark-bg-color);
+	}
+
+	.logo-svg {
+		background-color: var(--dark-primary-color);
+	}
+
+	.sub-1 .svg path {
+		fill: var(--dark-primary-color);
+	}
+
+	ul li a {
+		color: var(--dark-primary-color);
+	}
+
+	.sub-1 p,
+	h2 {
+		color: var(--dark-text-header-color);
+	}
+
+	.sub-6 {
+		border-top: 1px solid var(--dark-primary-color);
+	}
+
+	.last p,
+	.last p a,
+	.navigation a {
+		color: var(--dark-primary-color);
 	}
 }
